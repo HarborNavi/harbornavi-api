@@ -1,9 +1,11 @@
 import type { LandingAssetRecord } from "./assets";
 
+export type LandingAssetSlot = "homeHero" | "packageHero" | "petHero";
+
 export interface LandingContentResponse {
   version: string;
-  source: "static-default";
-  assets: Record<"homeHero" | "packageHero" | "petHero", LandingAssetRecord>;
+  source: "static-default" | "r2";
+  assets: Record<LandingAssetSlot, LandingAssetRecord>;
 }
 
 export const landingContent: LandingContentResponse = {

@@ -8,6 +8,7 @@ export const landingAssetUses = [
 ] as const;
 
 export type LandingAssetUse = (typeof landingAssetUses)[number];
+export const landingAssetSlots = ["homeHero", "packageHero", "petHero"] as const;
 
 export interface LandingAssetRecord {
   key: string;

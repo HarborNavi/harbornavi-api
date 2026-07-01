@@ -16,7 +16,7 @@ The landing page stays in `harbornavi-site`. This repo owns upload signing, asse
 | --- | --- | --- | --- |
 | `GET` | `/api/health` | No | Service health check |
 | `GET` | `/api/content/landing` | No | Public landing content asset contract |
-| `PUT` | `/api/content/landing` | Bearer token | Validates the future content patch shape; persistence is not enabled yet |
+| `PUT` | `/api/content/landing` | Bearer token | Saves landing image asset URLs into the configured R2/S3 content JSON |
 | `POST` | `/api/uploads/presign` | Bearer token | Returns an R2/S3-compatible presigned `PUT` upload URL |
 
 ## Upload contract
@@ -75,7 +75,10 @@ Required environment variables:
 - `R2_ACCESS_KEY_ID`
 - `R2_SECRET_ACCESS_KEY`
 - `R2_PUBLIC_BASE_URL`
+- `LANDING_CONTENT_KEY`
 
 ## Notes
 
-`PUT /api/content/landing` intentionally returns `501` until a durable content store is selected. The boundary is ready, but the API should not pretend it can persist CMS state before KV, DB, or Git-backed content storage exists.
+`GET /api/content/landing` falls back to the static image contract when R2 is not configured or when the content JSON does not exist yet. `PUT /api/content/landing` requires R2 configuration and an admin bearer token.
+
+For browser uploads, the R2 bucket must allow CORS `PUT` from `https://harbornavi.com` and local development origins.
