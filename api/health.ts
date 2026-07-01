@@ -1,4 +1,4 @@
-import { jsonResponse, optionsResponse } from "../src/lib/http";
+import { jsonResponse, optionsResponse } from "../src/lib/http.js";
 
 export function OPTIONS(request: Request): Response {
   return optionsResponse(request);

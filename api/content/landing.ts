@@ -1,6 +1,6 @@
-import { requireAdmin } from "../../src/lib/auth";
-import { getLandingContent, updateLandingContent, type LandingContentPatch } from "../../src/lib/content-store";
-import { errorResponse, jsonResponse, optionsResponse, readJson } from "../../src/lib/http";
+import { requireAdmin } from "../../src/lib/auth.js";
+import { getLandingContent, updateLandingContent, type LandingContentPatch } from "../../src/lib/content-store.js";
+import { errorResponse, jsonResponse, optionsResponse, readJson } from "../../src/lib/http.js";
 
 export function OPTIONS(request: Request): Response {
   return optionsResponse(request);

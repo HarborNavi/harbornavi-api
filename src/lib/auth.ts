@@ -1,4 +1,4 @@
-import { getEnv } from "./env";
+import { getEnv } from "./env.js";
 
 export interface AuthResult {
   ok: boolean;

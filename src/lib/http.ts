@@ -1,4 +1,4 @@
-import { getAllowedOrigins } from "./env";
+import { getAllowedOrigins } from "./env.js";
 
 export interface ApiErrorBody {
   error: string;

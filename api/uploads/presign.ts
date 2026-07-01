@@ -1,8 +1,8 @@
-import { requireAdmin } from "../../src/lib/auth";
-import { validateUploadRequest, type PresignUploadRequest } from "../../src/lib/assets";
-import { getEnv } from "../../src/lib/env";
-import { errorResponse, jsonResponse, optionsResponse, readJson } from "../../src/lib/http";
-import { createR2PresignedUpload } from "../../src/lib/r2";
+import { requireAdmin } from "../../src/lib/auth.js";
+import { validateUploadRequest, type PresignUploadRequest } from "../../src/lib/assets.js";
+import { getEnv } from "../../src/lib/env.js";
+import { errorResponse, jsonResponse, optionsResponse, readJson } from "../../src/lib/http.js";
+import { createR2PresignedUpload } from "../../src/lib/r2.js";
 
 export function OPTIONS(request: Request): Response {
   return optionsResponse(request);

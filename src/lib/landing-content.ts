@@ -1,4 +1,4 @@
-import type { LandingAssetRecord } from "./assets";
+import type { LandingAssetRecord } from "./assets.js";
 
 export type LandingAssetSlot = "homeHero" | "packageHero" | "petHero";
 

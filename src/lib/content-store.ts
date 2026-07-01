@@ -1,7 +1,7 @@
 import { GetObjectCommand, NoSuchKey, PutObjectCommand } from "@aws-sdk/client-s3";
-import { landingAssetSlots, type LandingAssetRecord } from "./assets";
-import { landingContent, type LandingAssetSlot, type LandingContentResponse } from "./landing-content";
-import { createR2Client, getR2Config } from "./r2";
+import { landingAssetSlots, type LandingAssetRecord } from "./assets.js";
+import { landingContent, type LandingAssetSlot, type LandingContentResponse } from "./landing-content.js";
+import { createR2Client, getR2Config } from "./r2.js";
 
 export type LandingContentPatch = {
   assets?: Partial<Record<LandingAssetSlot, LandingAssetRecord>>;
